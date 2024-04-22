@@ -1,8 +1,19 @@
-.floatingbox {
+#floatingbox {
 	text-align: center;
 	width: 100%;
 	position: absolute;
 	top: 30px;
+	color: #212121;
+}
+
+.maintext {
+	color: #15141f;
+	font-size: 25px;
+}
+
+.hiddenlist {
+	list-style: none;
+	padding-left: 0px;
 }
 
 a {
@@ -13,7 +24,6 @@ a {
 	font-size: 60px;
 	font-family: 'Caslon';
 	text-decoration: none;
-
 	color: white;
 }
 
@@ -25,8 +35,5 @@ a {
 }
 
 body {
-	background-color:	royalblue;
+	background-color: #3a3c9c;
 }
-
-
-
