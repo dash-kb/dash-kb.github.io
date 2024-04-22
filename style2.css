@@ -13,8 +13,8 @@ a {
 	font-size: 60px;
 	font-family: 'Caslon';
 	text-decoration: none;
-	
-	color: black;
+
+	color: white;
 }
 
 @font-face {
@@ -25,7 +25,7 @@ a {
 }
 
 body {
-	background-color: lightgrey;
+	background-color:	royalblue;
 }
 
 
