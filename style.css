@@ -1,0 +1,17 @@
+.floatingbox {
+	color: darkred;
+	background-color: #f0efe9;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+p {
+	margin: 10px;
+}
+
+body {
+	background-color: #e3e1d1;
+	font-family: 'Lato';
+	font-size: 22px;
+}
