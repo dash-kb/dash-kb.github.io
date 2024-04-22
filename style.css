@@ -1,17 +1,31 @@
 .floatingbox {
-	color: darkred;
-	background-color: #f0efe9;
-	position: fixed;
-	right: 0;
-	top: 0;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 30px;
 }
 
-p {
-	margin: 10px;
+a {
+	margin: auto;
+	display: inline-block;
+	font-style: italic;
+	font-weight: bolder;
+	font-size: 60px;
+	font-family: 'Caslon';
+	text-decoration: none;
+	color: black;
+}
+
+@font-face {
+  font-family: "Caslon";
+  src:
+    local("Libre_Caslon_Text"),
+    url("/fonts/Libre_Caslon_Text/Libre_Caslon_Text-Regular.ttf") format("truetype");
 }
 
 body {
-	background-color: #e3e1d1;
-	font-family: 'Lato';
-	font-size: 22px;
+	background-color: lightgrey;
 }
+
+
+
