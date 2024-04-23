@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+@font-face{
+	font-display:swap;
+	font-family:Carrara;
+	font-style:normal;
+	font-weight:300;
+	src:
+		url(./fonts/321983_0_0.woff2) format("woff2"),
+		url(./fonts/321983_0_0.woff) format("woff"),
+		url(./fonts/321983_0_0.ttf) format("truetype")}
+
 #floatingbox {
 	text-align: center;
 	width: 100%;
@@ -31,14 +41,14 @@
 
 #headertext {
 	color: #e6e6e6;
-	font-family: "Caslon";
 	font-size: 4em;
-	text-align: center;
+	text-align: left	;
 	margin: auto;
   	position: absolute;
   	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
+  	font-family: Carrara;
 }
 
 
@@ -61,34 +71,9 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	color: black;
-	
 	font-family: 'Helvetica';
 }
 
-@font-face {
-  font-family: "Caslon";
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local("Libre_Caslon_Text"),
-    url("/fonts/Libre_Caslon_Text/Libre_Caslon_Text-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Caslon";
-  font-style: normal;
-  font-weight: 700;
-  src:
-    local("Libre_Caslon_Text"),
-    url("/fonts/Libre_Caslon_Text/Libre_Caslon_Text-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Caslon";
-  font-style: normal;
-  font-weight: 700;
-  src:
-    local("Libre_Caslon_Text"),
-    url("/fonts/Libre_Caslon_Text/Libre_Caslon_Text-Bold.ttf") format("truetype");
-}
 
 body {
 /* 	background-color: #e6e6e6; (old)*/
