@@ -14,6 +14,11 @@
 		url(./fonts/321983_0_0.woff) format("woff"),
 		url(./fonts/321983_0_0.ttf) format("truetype")}
 
+#top {
+	position: absolute;
+	top: 0px;
+}
+
 #floatingbox {
 	text-align: center;
 	width: 100%;
@@ -51,7 +56,6 @@
   	font-family: Carrara;
 }
 
-
 .maintext {
 	color: #15141f;
 	font-size: 25px;
@@ -66,12 +70,28 @@
 	text-align: center;
 }
 
+.links {
+	display: inline-flex;
+	list-style: none;
+}
+
+.links>li {
+	padding: 2vh;
+	color: #e0c19f;
+
+}
+
 a {
 	margin: auto;
 	display: inline-block;
 	text-decoration: none;
 	color: black;
 	font-family: 'Helvetica';
+}
+
+footer {
+	text-align: center;
+	margin-bottom: 4vh;
 }
 
 
@@ -83,5 +103,8 @@ body {
 	height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 
