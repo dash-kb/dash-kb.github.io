@@ -14,11 +14,6 @@
 		url(./fonts/321983_0_0.woff) format("woff"),
 		url(./fonts/321983_0_0.ttf) format("truetype")}
 
-#top {
-	position: absolute;
-	top: 0px;
-}
-
 #floatingbox {
 	text-align: center;
 	width: 100%;
@@ -101,10 +96,6 @@ body {
 	#fefaee
 	width: 100%;
 	height: 100%;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 
