@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dpkb photography</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="glass-nav" data-open="false" aria-label="Trip navigation">
+        <button class="glass-toggle" type="button" aria-expanded="false" aria-controls="trip-nav">
+          <span class="toggle-title" id="current-page-name">Madison</span>
+        </button>
+
+        <nav class="glass-panel" id="trip-nav">
+          <button class="trip-link is-active" type="button" data-page="madison">Madison</button>
+          <button class="trip-link" type="button" data-page="solo-road">Solo road</button>
+          <button class="trip-link" type="button" data-page="japan">Japan</button>
+        </nav>
+      </aside>
+
+      <main class="gallery-stage">
+        <section class="trip-page is-active" data-page="madison" data-theme="warm">
+          <header class="trip-header">
+            <p class="trip-eyebrow">Title</p>
+            <h1>Madison</h1>
+          </header>
+
+          <div class="photo-stack" aria-label="Madison photos">
+            <figure class="photo-card">
+              <img src="../images/tetons.JPG" alt="Mountain landscape from the Tetons trip">
+            </figure>
+          </div>
+        </section>
+
+        <section class="trip-page" data-page="solo-road" data-theme="cool" hidden>
+          <header class="trip-header">
+            <p class="trip-eyebrow">Trip archive</p>
+            <h1>Solo road</h1>
+          </header>
+
+          <div class="photo-stack" aria-label="Solo road photos">
+            <figure class="photo-card">
+              <img src="../images/tetons.JPG" alt="Mountain landscape from the Tetons trip">
+            </figure>
+          </div>
+        </section>
+
+        <section class="trip-page" data-page="japan" data-theme="rose" hidden>
+          <header class="trip-header">
+            <p class="trip-eyebrow">Trip archive</p>
+            <h1>Japan</h1>
+          </header>
+
+          <div class="photo-stack" aria-label="Japan photos">
+            <figure class="photo-card">
+              <img src="../images/tetons.JPG" alt="Mountain landscape from the Tetons trip">
+            </figure>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -9,18 +9,21 @@
     <body>
         <main class="page">
             <header class="profile-header">
+                <span class="location location-header"><img src="https://community.fastly.steamstatic.com/public/images/countryflags/us.gif" alt="" aria-hidden="true">California, United States</span>
                 <div class="profile-top">
                     <img class="avatar" src="images/headshot.jpg" alt="Profile portrait of Dash Kamriani Beard">
                     <div class="identity">
-                        <a class="site-name" href="https://dash-kb.github.io">Dash Kamriani Beard</a>
-                        <p class="subtitle">personal and professional notes, projects, and links</p>
+                        <div class="identity-row">
+                            <a class="site-name" href="https://dash-kb.github.io">Dash Kamriani Beard</a>
+                        </div>
+                        <p class="subtitle">Computer Engineer</p>
                     </div>
                 </div>
 
                 <div class="profile-meta">
-                    <span>New York, NY</span>
-                    <span>available for projects</span>
-                    <span>last updated June 2026</span>
+                    <span id="status-badge" class="status-badge" aria-live="polite">Loading</span>
+                    <span class="meta-separator" aria-hidden="true">|</span>
+                    <a class="resume-link" href="files/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                 </div>
             </header>
 
@@ -28,40 +31,43 @@
                 <article class="content-column">
                     <section class="panel">
                         <h2 class="panel-title">ABOUT</h2>
-                        <p class="panel-copy">
-                            I make websites, write, and build things around ideas that need a little room to breathe.
-                            The shape of the page matters as much as the text on it.
+                        <p class="panel-copy about-copy">
+                            I'm Dash! I'm a recent grad from UIUC ECE.
+                            
                         </p>
+
                     </section>
 
                     <section class="panel">
-                        <h2 class="panel-title">PERSONAL</h2>
+                        <h2 class="panel-title">EXPERIENCE</h2>
                         <ul class="info-list">
-                            <li>reading notes and fragments</li>
-                            <li>photos, found objects, and archives</li>
-                            <li>small writing experiments</li>
-                            <li>music, long walks, and ambient thinking</li>
-                        </ul>
-                    </section>
-
-                    <section class="panel">
-                        <h2 class="panel-title">PROFESSIONAL</h2>
-                        <ul class="info-list">
-                            <li>product and web design</li>
-                            <li>front-end development</li>
-                            <li>writing, documentation, and systems</li>
-                            <li>collaboration and freelance work</li>
+                            <li>Klaus</li>
+                            <li>DOE Intern</li>
                         </ul>
                     </section>
 
                     <section class="panel">
                         <h2 class="panel-title">SELECTED WORK</h2>
                         <ul class="info-list">
-                            <li>project title one</li>
-                            <li>project title two</li>
-                            <li>project title three</li>
+                            <li><a class="project-link" href="files/finalreport_486.pdf" target="_blank" rel="noopener noreferrer">Control Systems Final Project</a></li>
+                            <li>'91 Jeep Cherokee</li>
+                            <li><a href="./photography/index.html" class="project-link">Some pictures</a></li>
                         </ul>
                     </section>
+
+                    <section class="panel">
+                        <h2 class="panel-title">PERSONAL INTERESTS</h2>
+                        <span class="about-list">
+                            <span class="about-tag">low level computing</span>
+                            <span class="about-tag">space exploration</span>
+                            <span class="about-tag">photography</span>
+                            <span class="about-tag">the outdoors</span>
+                            <span class="about-tag">cars</span>
+                        </span>
+                        
+                    </section>
+
+                    
                 </article>
 
                 <aside class="sidebar">
@@ -71,26 +77,75 @@
                             <li><a href="https://github.com/dash-kb">github</a></li>
                             <li><a href="https://linkedin.com/in/dpkb">linkedin</a></li>
                             <li><a href="https://x.com/slasheyy">x</a></li>
-                            <li><a href="mailto:dash@example.com">email</a></li>
+                            <li><a href="mailto:dashpk2@illinois.edu">email</a></li>
                         </ul>
                     </section>
 
-                    <section class="panel">
-                        <h2 class="panel-title">STATUS</h2>
-                        <p class="panel-copy">
-                            building a quiet personal site with a lot of negative space and a structured,
-                            profile-like layout.
-                        </p>
-                    </section>
-
-                    <section class="panel">
+                    <!-- <section class="panel">
                         <h2 class="panel-title">CONTACT</h2>
                         <p class="panel-copy">
-                            Available for select work, collaborations, and editorial projects.
+                            <a href="mailto:dashpk2@illinois.edu">dashpk2@illinois.edu</a>
                         </p>
-                    </section>
+                    </section> -->
                 </aside>
             </section>
         </main>
+        <script>
+            (function () {
+                const statusEl = document.getElementById('status-badge');
+                const timeZone = 'America/Los_Angeles';
+
+                function getZoneParts(date) {
+                    const parts = new Intl.DateTimeFormat('en-US', {
+                        timeZone,
+                        weekday: 'short',
+                        hour: 'numeric',
+                        hour12: false
+                    }).formatToParts(date);
+
+                    const values = {};
+                    for (const part of parts) {
+                        if (part.type !== 'literal') {
+                            values[part.type] = part.value;
+                        }
+                    }
+
+                    return {
+                        weekday: values.weekday,
+                        hour: Number(values.hour)
+                    };
+                }
+
+                function updateStatus() {
+                    const { weekday, hour } = getZoneParts(new Date());
+                    const isWeekday = weekday !== 'Sat' && weekday !== 'Sun';
+                    const isWorkingHours = isWeekday && hour >= 9 && hour < 17;
+                    const isWakingHours = hour >= 8 && hour < 22;
+
+                    statusEl.classList.remove('status-badge--work', 'status-badge--day', 'status-badge--off');
+
+                    if (isWorkingHours) {
+                        statusEl.textContent = 'Currently Online';
+                        statusEl.classList.add('status-badge--work');
+                        statusEl.title = 'Online during California working hours';
+                        return;
+                    }
+
+                    if (isWakingHours) {
+                        statusEl.textContent = 'Currently Online';
+                        statusEl.classList.add('status-badge--day');
+                        statusEl.title = 'Online during California waking hours';
+                        return;
+                    }
+
+                    statusEl.textContent = 'Currently Offline';
+                    statusEl.classList.add('status-badge--off');
+                    statusEl.title = 'Offline outside California waking hours';
+                }
+
+                updateStatus();
+                window.setInterval(updateStatus, 60 * 1000);
+            })();
+        </script>
     </body>
 </html>
